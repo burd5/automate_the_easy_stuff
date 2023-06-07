@@ -7,4 +7,13 @@ Write a function that takes a string and does the same thing as the strip() stri
 
 stripRegex = re.compile(r'(^\s*)|(\s*$)')
 
-print(re.sub(stripRegex, '', '   sjsjs js  sjsjd      '))
+
+def regexStrip(str, characters = None):
+    if characters == None:
+        return re.sub(stripRegex, '', str)
+    else:
+        for character in characters:
+            str = re.sub(rf'{character}', '', str)
+        return str
+
+print(regexStrip(' sjsj skweowor weiqwoe   '))
